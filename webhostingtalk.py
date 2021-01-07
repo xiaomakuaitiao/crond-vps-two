@@ -24,6 +24,7 @@ def articleFormat(soup):
     content = soup.find('blockquote',attrs={'class','postcontent'})
     try:
         for item in content.find_all('a'):
+            item.attrs['target'] = '_blank'
             item.attrs['rel'] = 'noopener noreferrer nofollow'
     except:
         pass

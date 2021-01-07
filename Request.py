@@ -49,7 +49,6 @@ class Request():
             head = {}
             head.update(ua)
             head.update(headers)
-            self.logger.info('proxies:{}'.format(proxies))
             response = requests.get(url,headers = head, proxies=proxies, timeout = 120)
             return response.text
         except requests.exceptions.ConnectTimeout:

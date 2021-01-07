@@ -29,6 +29,7 @@ def articleFormat(soup):
                 continue
 
             item.attrs['rel'] = 'noopener noreferrer nofollow'
+            item.attrs['target'] = '_blank'
             if item.has_key('data-cfemail') == True :
                 item.extract()
     except:
