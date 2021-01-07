@@ -49,6 +49,10 @@ def article():
         try:
             data = articleFormat(soup)
             data['category'] = cate
+            if data['title'] == '':
+                request.logger.info('title is empty')
+                continue
+
             request.requestPost(wordpress_api=post_api,data=data)
             request.logger.info('Post Success!,title:{}'.format(data['title']))
         except Exception as e:
