@@ -18,10 +18,36 @@ def articleList(url):
     urls = soup.find_all('a',attrs={'class','title'})
     list_utl = [whtk_host + item.get('href') for item in urls]
 
+def clearTextIcon(data):
+    try:
+        data = data.replace('🔥','')
+        data = data.replace('🟢','')
+        data = data.replace('🧨','')
+        data = data.replace('💥','')
+        data = data.replace('✅','')
+        data = data.replace('😊','')
+        data = data.replace('⭐','')
+        data = data.replace('🚀','')
+        data = data.replace('🌎','')
+        data = data.replace('💳','')
+        data = data.replace('💯','')
+        data = data.replace('🎯','')
+        data = data.replace('👍','')
+        data = data.replace('🇳🇱','')
+        data = data.replace('🇪🇺','')
+        data = data.replace('⚡','')
+        return data
+    except:
+        return ''
+
 def articleFormat(soup):
     title = soup.find('span',attrs={'class','threadtitle'}).next.text
     create_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     content = soup.find('blockquote',attrs={'class','postcontent'})
+    try:
+        title = clearTextIcon(title)
+    except:
+        pass
     try:
         for item in content.find_all('a'):
             item.attrs['target'] = '_blank'

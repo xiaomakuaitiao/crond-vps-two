@@ -5,7 +5,7 @@ import time
 url = 'https://www.lowendtalk.com/categories/offers'
 request = Request()
 list_url = []
-post_api = 'https://www.vps136.com/index.php/action/import_news'
+post_api = 'http://typecho.test/index.php/action/import_news'
 
 
 def articleList():
