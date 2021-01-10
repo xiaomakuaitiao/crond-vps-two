@@ -5,7 +5,7 @@ import time
 url = 'https://www.lowendtalk.com/categories/offers'
 request = Request()
 list_url = []
-post_api = 'http://typecho.test/index.php/action/import_news'
+post_api = 'https://www.vps136.com/index.php/action/import_news'
 
 
 def articleList():
@@ -18,11 +18,38 @@ def articleList():
     urls = soup.find_all('div',attrs={'class','Title'})
     list_url = [item.find('a').get('href') for item in urls]
     
+def clearTextIcon(data):
+    try:
+        data = data.replace('🔥','')
+        data = data.replace('🟢','')
+        data = data.replace('🧨','')
+        data = data.replace('💥','')
+        data = data.replace('✅','')
+        data = data.replace('😊','')
+        data = data.replace('⭐','')
+        data = data.replace('🚀','')
+        data = data.replace('🌎','')
+        data = data.replace('💳','')
+        data = data.replace('💯','')
+        data = data.replace('🎯','')
+        data = data.replace('👍','')
+        data = data.replace('🇳🇱','')
+        data = data.replace('🇪🇺','')
+        data = data.replace('⚡','')
+        return data
+    except:
+        return ''
+
 
 def articleFormat(soup):
     title = soup.find('h1').text
     create_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     body = soup.find('div',attrs={'class','Message userContent'})
+    try:
+        title = clearTextIcon(title)
+    except:
+        pass
+    
     try:
         for item in body.find_all('a'):
             if item == '':
