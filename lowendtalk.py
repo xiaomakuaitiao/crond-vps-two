@@ -35,7 +35,19 @@ def clearTextIcon(data):
         data = data.replace('👍','')
         data = data.replace('🇳🇱','')
         data = data.replace('🇪🇺','')
-        data = data.replace('⚡','')
+        data = data.replace('💹','')
+        data = data.replace('🛠️','')
+        data = data.replace('✔️','')
+        data = data.replace('⏩','')
+        data = data.replace('🤑','')
+        data = data.replace('🌸','')
+        data = data.replace('🔴','')
+        data = data.replace('🎅','')
+        data = data.replace('😍','')
+        data = data.replace('🎄','')
+        data = data.replace('🥂','')
+        data = data.replace('🍾','')
+        data = data.replace('💜','')
         return data
     except:
         return ''
