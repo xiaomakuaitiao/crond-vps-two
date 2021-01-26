@@ -29,4 +29,5 @@ jobs:
         python 51cto.py
         python webhostingtalk.py
         python lowendtalk.py
+        python cnblogs.py
 
