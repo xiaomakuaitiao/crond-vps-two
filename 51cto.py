@@ -66,7 +66,7 @@ def main():
             continue
         article()
         request.logger.info('{} cate reptile Success!,sleep 5s'.format(key))
-        time.sleep(5)
+        time.sleep(6)
 
 main()
 request.logger.info('51cto Success')
