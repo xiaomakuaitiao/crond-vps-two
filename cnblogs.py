@@ -79,5 +79,5 @@ def main():
     article()
 
 main()
-request.logger.info('cnblogs Success')
+request.logger.info('cnblogs Success all')
 
